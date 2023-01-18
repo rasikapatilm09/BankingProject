@@ -8,5 +8,7 @@ public class BaseClass {
 		System.setProperty("webdriver.chrome.driver", "F:\\Selenium\\chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
 		driver.get("https://demo.guru99.com/v1/index.php");
+		
+		
 	}
 }
