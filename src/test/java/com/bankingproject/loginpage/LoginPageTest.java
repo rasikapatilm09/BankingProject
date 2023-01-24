@@ -1,5 +1,6 @@
 package com.bankingproject.loginpage;
 
+import org.openqa.selenium.WindowType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -9,15 +10,19 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.bankingproject.base.BaseClass;
+import com.bankingproject.pom.LoginPagePom;
 
 public class LoginPageTest extends BaseClass{
 
+	LoginPagePom loginPagePom ;
+	//WebDriver driver;
+	
 	@BeforeClass
 	public void setUp() {
 		launchWebsite();
 	}
 	
-	@AfterMethod
+	@AfterClass
 	public void tearDown() {
 		driver.close();
 	}
@@ -43,4 +48,18 @@ public class LoginPageTest extends BaseClass{
 			System.out.println("wrong Url....");
 		}
 	}
+	@Test
+	public void clickOnLoginButton() throws InterruptedException {
+		loginPagePom = new LoginPagePom();
+		loginPagePom.clickOnLoginButton();
+	}
+	
+	@Test
+	public void clickOnGetCredential() throws InterruptedException {
+		loginPagePom = new LoginPagePom();
+		loginPagePom.clickOnGetCredential();
+		Thread.sleep(15000);
+	}
+
 }
+
